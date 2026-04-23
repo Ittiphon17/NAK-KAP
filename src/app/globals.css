@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1f2937;
+  --color-secondary: #6b7280;
+  --color-accent: #3b82f6;
+  --color-gold: #c9a227;
+  --color-surface: #f9fafb;
+  
+  --font-sans: var(--font-outfit), var(--font-bai-jamjuree), ui-sans-serif, system-ui;
+  --font-heading: var(--font-bai-jamjuree), var(--font-outfit), ui-serif, Georgia;
+
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-huge: 28px;
+}
+
+:root {
+  --font-outfit: "Outfit", sans-serif;
+  --font-bai-jamjuree: "Bai Jamjuree", sans-serif;
+}
+
+body {
+  @apply bg-white text-primary font-sans antialiased;
+}
+
+.container-custom {
+  @apply max-w-[1400px] mx-auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-heading font-extrabold tracking-tight;
+}
+
+.luxury-card {
+  @apply bg-surface rounded-huge shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-md hover:-translate-y-1;
+}
+
+.glass-card {
+  @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-lg;
+}
+
+.btn-primary {
+  @apply bg-primary text-white px-6 py-3 rounded-xl font-bold transition-all hover:bg-primary/90 active:scale-95;
+}
+
+.btn-secondary {
+  @apply bg-white text-primary border border-gray-200 px-6 py-3 rounded-xl font-bold transition-all hover:bg-gray-50 active:scale-95;
+}
+
+.btn-gold {
+  @apply bg-gold text-white px-6 py-3 rounded-xl font-bold transition-all hover:bg-gold/90 active:scale-95;
+}

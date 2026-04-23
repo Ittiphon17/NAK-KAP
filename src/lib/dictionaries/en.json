@@ -1,0 +1,30 @@
+{
+  "nav": {
+    "home": "Home",
+    "cars": "Cars",
+    "about": "About",
+    "contact": "Contact",
+    "admin": "Admin",
+    "bookNow": "Book Now"
+  },
+  "hero": {
+    "title": "Rent Your Perfect Car",
+    "subtitle": "Luxury, Comfort, and Convenience",
+    "cta": "Explore Cars"
+  },
+  "search": {
+    "pickupLocation": "Pickup Location",
+    "pickupDate": "Pickup Date",
+    "returnDate": "Return Date",
+    "carType": "Car Type",
+    "search": "Search Now"
+  },
+  "common": {
+    "perDay": "/ day",
+    "viewDetails": "View Details",
+    "rentNow": "Rent Now",
+    "transmission": "Transmission",
+    "seats": "Seats",
+    "fuel": "Fuel"
+  }
+}
