@@ -16,7 +16,7 @@ export default async function AboutPage() {
         <div className="container-custom px-6 text-center">
           <h1 className="text-6xl md:text-8xl font-bold mb-8">{dict.aboutPage.title}</h1>
           <p className="text-xl text-white/70 max-w-2xl mx-auto leading-relaxed">
-            Redefining the standard of <strong>luxury car rental</strong> since 2024. <strong>NAK KAP</strong> is built on a foundation of <strong>excellence</strong>, <strong>transparency</strong>, and <strong>style</strong>.
+            Redefining the standard of <strong>luxury car rental</strong> since 2009. <strong>NAK KAP</strong> is built on a foundation of <strong>excellence</strong>, <strong>transparency</strong>, and <strong>style</strong>.
           </p>
         </div>
       </section>
