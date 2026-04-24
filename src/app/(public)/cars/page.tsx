@@ -16,9 +16,9 @@ export default async function CarsPage() {
       {/* Header */}
       <section className="pt-40 pb-20 bg-surface">
         <div className="container-custom px-6">
-          <h1 className="text-5xl md:text-6xl font-bold text-primary mb-6">Explore Our Fleet</h1>
+          <h1 className="text-5xl md:text-6xl font-bold text-primary mb-6">{dict.carsPage.title}</h1>
           <p className="text-secondary text-lg max-w-2xl">
-            Choose from our curated collection of premium vehicles, from quiet electric flagships to roaring performance icons.
+            {dict.carsPage.subtitle}
           </p>
         </div>
       </section>
@@ -35,21 +35,20 @@ export default async function CarsPage() {
             {/* Grid */}
             <div className="flex-1">
               <div className="flex justify-between items-center mb-10">
-                <p className="text-secondary text-sm">Showing <span className="text-primary font-bold">{cars.length}</span> luxury cars</p>
+                <p className="text-secondary text-sm">{dict.carsPage.showing.replace("{{count}}", String(cars.length))}</p>
                 <div className="flex items-center gap-4">
-                  <span className="text-secondary text-sm">Sort by:</span>
+                  <span className="text-secondary text-sm">{dict.carsPage.sortBy}</span>
                   <select className="bg-transparent border-none text-sm font-bold text-primary focus:ring-0 cursor-pointer">
-                    <option>Recommended</option>
-                    <option>Price: Low to High</option>
-                    <option>Price: High to Low</option>
-                    <option>Newest First</option>
+                    {dict.carsPage.sortOptions.map((option) => (
+                      <option key={option}>{option}</option>
+                    ))}
                   </select>
                 </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {cars.map(car => (
-                  <CarCard key={car.id} car={car} dict={dict} />
+                  <CarCard key={car.id} car={car} dict={dict} locale={locale} />
                 ))}
               </div>
             </div>
@@ -57,7 +56,7 @@ export default async function CarsPage() {
         </div>
       </section>
 
-      <Footer dict={dict} />
+      <Footer dict={dict} locale={locale} />
     </main>
   );
 }

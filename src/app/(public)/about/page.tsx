@@ -14,9 +14,9 @@ export default async function AboutPage() {
       {/* Header */}
       <section className="pt-40 pb-32 bg-primary text-white">
         <div className="container-custom px-6 text-center">
-          <h1 className="text-6xl md:text-8xl font-bold mb-8">Our Journey</h1>
+          <h1 className="text-6xl md:text-8xl font-bold mb-8">{dict.aboutPage.title}</h1>
           <p className="text-xl text-white/70 max-w-2xl mx-auto leading-relaxed">
-            Redefining the standard of <strong>luxury car rental</strong> since 2024. <strong>NAK KAP</strong> is built on a foundation of <strong>excellence</strong>, <strong>transparency</strong>, and <strong>style</strong>.
+            Redefining the standard of <strong>luxury car rental</strong> since 2009. <strong>NAK KAP</strong> is built on a foundation of <strong>excellence</strong>, <strong>transparency</strong>, and <strong>style</strong>.
           </p>
         </div>
       </section>
@@ -34,23 +34,23 @@ export default async function AboutPage() {
               />
             </div>
             <div className="space-y-10">
-              <h2 className="text-4xl md:text-5xl font-bold text-primary">A Vision of <strong>Perfection</strong></h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-primary">{dict.aboutPage.visionTitle}</h2>
               <div className="space-y-6 text-secondary text-lg leading-relaxed">
                 <p>
-                  At <strong>NAK KAP</strong>, we believe that the journey is just as important as the destination. Founded with the mission to provide an <strong>unparalleled driving experience</strong>, we've curated a fleet that represents the pinnacle of automotive engineering and design.
+                  At <strong>NAK KAP</strong>, we believe that the journey is just as important as the destination. Founded with the mission to provide an <strong>unparalleled driving experience</strong>, we&apos;ve curated a fleet that represents the pinnacle of automotive engineering and design.
                 </p>
                 <p>
-                  Whether you're seeking the <strong>silent innovation</strong> of an electric flagship or the <strong>raw power</strong> of a performance icon, our collection is meticulously maintained to ensure every mile is a memory.
+                  Whether you&apos;re seeking the <strong>silent innovation</strong> of an electric flagship or the <strong>raw power</strong> of a performance icon, our collection is meticulously maintained to ensure every mile is a memory.
                 </p>
               </div>
               <div className="grid grid-cols-2 gap-8 pt-8">
                 <div>
                   <span className="block text-4xl font-bold text-accent mb-2">50+</span>
-                  <span className="text-sm font-bold text-primary uppercase tracking-widest">Premium Cars</span>
+                  <span className="text-sm font-bold text-primary uppercase tracking-widest">{dict.aboutPage.premiumCars}</span>
                 </div>
                 <div>
                   <span className="block text-4xl font-bold text-gold mb-2">10k+</span>
-                  <span className="text-sm font-bold text-primary uppercase tracking-widest">Happy Clients</span>
+                  <span className="text-sm font-bold text-primary uppercase tracking-widest">{dict.aboutPage.happyClients}</span>
                 </div>
               </div>
             </div>
@@ -76,7 +76,7 @@ export default async function AboutPage() {
         </div>
       </section>
 
-      <Footer dict={dict} />
+      <Footer dict={dict} locale={locale} />
     </main>
   );
 }

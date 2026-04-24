@@ -4,7 +4,7 @@ import { Footer } from "@/src/components/public/Footer";
 import { SearchForm } from "@/src/components/public/SearchForm";
 import { CarCard } from "@/src/components/public/CarCard";
 import { Button } from "@/src/components/ui/Button";
-import { getDictionary, getCurrentLocale } from "@/src/lib/i18n";
+import { getDictionary, getCurrentLocale, withLocale } from "@/src/lib/i18n";
 import { cars } from "@/src/data/cars";
 
 export default async function HomePage() {
@@ -38,10 +38,10 @@ export default async function HomePage() {
               {dict.hero.subtitle}
             </p>
             <div className="flex gap-4">
-              <Button size="lg" variant="primary" href="/cars">
+              <Button size="lg" variant="primary" href={withLocale(locale, "/cars")}>
                 {dict.hero.cta}
               </Button>
-              <Button size="lg" variant="outline" href="/about">
+              <Button size="lg" variant="outline" href={withLocale(locale, "/about")}>
                 {dict.nav.about}
               </Button>
             </div>
@@ -59,17 +59,17 @@ export default async function HomePage() {
         <div className="container-custom px-6">
           <div className="flex justify-between items-end mb-16">
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Featured <strong>Luxury Fleet</strong></h2>
-              <p className="text-secondary max-w-md">Our hand-picked selection of <strong>premium vehicles</strong> for your next journey.</p>
+              <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">{dict.home.featuredTitle}</h2>
+              <p className="text-secondary max-w-md">{dict.home.featuredSubtitle}</p>
             </div>
-            <Button variant="ghost" className="text-accent font-bold" href="/cars">
-              View All Cars →
+            <Button variant="ghost" className="text-accent font-bold" href={withLocale(locale, "/cars")}>
+              {dict.home.viewAllCars} →
             </Button>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredCars.map(car => (
-              <CarCard key={car.id} car={car} dict={dict} />
+              <CarCard key={car.id} car={car} dict={dict} locale={locale} />
             ))}
           </div>
         </div>
@@ -79,8 +79,8 @@ export default async function HomePage() {
       <section className="py-32 bg-surface">
         <div className="container-custom px-6">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">Why <strong>NAK KAP</strong>?</h2>
-            <p className="text-secondary max-w-2xl mx-auto">Setting the standard for <strong>premium car rentals</strong> with unparalleled <strong>service and quality</strong>.</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">{dict.home.whyTitle}</h2>
+            <p className="text-secondary max-w-2xl mx-auto">{dict.home.whySubtitle}</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -121,7 +121,7 @@ export default async function HomePage() {
                 { name: "Sarah Chen", role: "Designer", text: "The booking process was so smooth. Highly recommend <strong>NAK KAP</strong> for anyone looking for quality." }
               ].map((test, i) => (
                 <div key={i} className="flex-1 bg-surface p-10 rounded-[28px] border border-gray-100">
-                  <p className="text-primary italic mb-8 leading-relaxed">"{test.text}"</p>
+                  <p className="text-primary italic mb-8 leading-relaxed">&ldquo;{test.text}&rdquo;</p>
                   <div>
                     <p className="font-bold text-primary">{test.name}</p>
                     <p className="text-secondary text-xs">{test.role}</p>
@@ -155,7 +155,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <Footer dict={dict} />
+      <Footer dict={dict} locale={locale} />
     </main>
   );
 }

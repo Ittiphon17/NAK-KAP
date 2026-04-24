@@ -13,9 +13,9 @@ export default async function ContactPage() {
       
       <section className="pt-40 pb-20">
         <div className="container-custom px-6 text-center mb-20">
-          <h1 className="text-5xl md:text-7xl font-bold text-primary mb-6">Let's Connect</h1>
+          <h1 className="text-5xl md:text-7xl font-bold text-primary mb-6">{dict.contactPage.title}</h1>
           <p className="text-secondary text-xl max-w-2xl mx-auto">
-            Have questions about our fleet or special requests? Our concierge team is here to assist you 24/7.
+            {dict.contactPage.subtitle}
           </p>
         </div>
 
@@ -25,9 +25,9 @@ export default async function ContactPage() {
             {/* Contact Cards */}
             <div className="lg:col-span-1 space-y-6">
               {[
-                { title: "Email Us", detail: "concierge@nakdrive.com", action: "Send Email" },
-                { title: "Call Us", detail: "+66 2 123 4567", action: "Call Now" },
-                { title: "Visit Us", detail: "123 Wireless Road, Lumpini, Bangkok", action: "Get Directions" }
+                { title: dict.contactPage.cards.emailTitle, detail: "concierge@nakdrive.com", action: dict.contactPage.cards.emailAction },
+                { title: dict.contactPage.cards.callTitle, detail: "+66 2 123 4567", action: dict.contactPage.cards.callAction },
+                { title: dict.contactPage.cards.visitTitle, detail: "123 Wireless Road, Lumpini, Bangkok", action: dict.contactPage.cards.visitAction }
               ].map((item, i) => (
                 <div key={i} className="luxury-card p-10">
                   <h3 className="text-xs font-bold text-secondary uppercase tracking-widest mb-4">{item.title}</h3>
@@ -43,29 +43,28 @@ export default async function ContactPage() {
                 <form className="space-y-8">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="space-y-2">
-                      <label className="text-xs font-bold text-primary uppercase">Full Name</label>
-                      <input type="text" placeholder="John Doe" className="w-full bg-white border-none rounded-xl px-4 py-4 text-sm focus:ring-2 focus:ring-accent" />
+                      <label className="text-xs font-bold text-primary uppercase">{dict.contactPage.form.fullName}</label>
+                      <input type="text" placeholder={dict.contactPage.form.fullNamePlaceholder} className="w-full bg-white border-none rounded-xl px-4 py-4 text-sm focus:ring-2 focus:ring-accent" />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-xs font-bold text-primary uppercase">Email Address</label>
-                      <input type="email" placeholder="john@example.com" className="w-full bg-white border-none rounded-xl px-4 py-4 text-sm focus:ring-2 focus:ring-accent" />
+                      <label className="text-xs font-bold text-primary uppercase">{dict.contactPage.form.email}</label>
+                      <input type="email" placeholder={dict.contactPage.form.emailPlaceholder} className="w-full bg-white border-none rounded-xl px-4 py-4 text-sm focus:ring-2 focus:ring-accent" />
                     </div>
                   </div>
                   <div className="space-y-2">
-                    <label className="text-xs font-bold text-primary uppercase">Subject</label>
+                    <label className="text-xs font-bold text-primary uppercase">{dict.contactPage.form.subject}</label>
                     <select className="w-full bg-white border-none rounded-xl px-4 py-4 text-sm focus:ring-2 focus:ring-accent appearance-none">
-                       <option>Booking Inquiry</option>
-                       <option>Corporate Rentals</option>
-                       <option>Technical Support</option>
-                       <option>Other</option>
+                       {dict.contactPage.form.subjectOptions.map((option) => (
+                         <option key={option}>{option}</option>
+                       ))}
                     </select>
                   </div>
                   <div className="space-y-2">
-                    <label className="text-xs font-bold text-primary uppercase">Message</label>
-                    <textarea rows={6} placeholder="How can we help you?" className="w-full bg-white border-none rounded-xl px-4 py-4 text-sm focus:ring-2 focus:ring-accent resize-none"></textarea>
+                    <label className="text-xs font-bold text-primary uppercase">{dict.contactPage.form.message}</label>
+                    <textarea rows={6} placeholder={dict.contactPage.form.messagePlaceholder} className="w-full bg-white border-none rounded-xl px-4 py-4 text-sm focus:ring-2 focus:ring-accent resize-none"></textarea>
                   </div>
                   <Button variant="primary" size="lg" className="w-full md:w-auto px-12">
-                     Send Message
+                     {dict.contactPage.form.sendMessage}
                   </Button>
                 </form>
               </div>
@@ -74,7 +73,7 @@ export default async function ContactPage() {
         </div>
       </section>
 
-      <Footer dict={dict} />
+      <Footer dict={dict} locale={locale} />
     </main>
   );
 }

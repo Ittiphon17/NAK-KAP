@@ -12,12 +12,109 @@
     "subtitle": "Luxury, Comfort, and Convenience",
     "cta": "Explore Cars"
   },
+  "home": {
+    "featuredTitle": "Featured Luxury Fleet",
+    "featuredSubtitle": "Our hand-picked selection of premium vehicles for your next journey.",
+    "viewAllCars": "View All Cars",
+    "whyTitle": "Why NAK KAP?",
+    "whySubtitle": "Setting the standard for premium car rentals with unparalleled service and quality."
+  },
   "search": {
     "pickupLocation": "Pickup Location",
+    "pickupPlaceholder": "Bangkok, TH",
     "pickupDate": "Pickup Date",
     "returnDate": "Return Date",
     "carType": "Car Type",
+    "carTypeOptions": ["All Types", "Luxury", "Sedan", "SUV", "Sports"],
     "search": "Search Now"
+  },
+  "filters": {
+    "priceRange": "Price Range",
+    "carType": "Car Type",
+    "carTypeOptions": ["All Types", "Sedan", "SUV", "Luxury", "Sports", "Electric"],
+    "transmission": "Transmission",
+    "transmissionOptions": ["Automatic", "Manual"],
+    "seats": "Seats",
+    "seatOptions": ["2 Seats", "4 Seats", "5 Seats", "7+ Seats"],
+    "apply": "Apply Filters"
+  },
+  "bookingForm": {
+    "totalPrice": "Total Price",
+    "pickupLocation": "Pickup Location",
+    "pickupLocationPlaceholder": "Select location",
+    "pickupDate": "Pickup Date",
+    "returnDate": "Return Date",
+    "yourName": "Your Name",
+    "yourNamePlaceholder": "Full name",
+    "phoneNumber": "Phone Number",
+    "bookNow": "Book {{carName}} Now",
+    "terms": "By clicking the button, you agree to our Terms & Conditions and Privacy Policy. Confirmation will be sent to your phone."
+  },
+  "carsPage": {
+    "title": "Explore Our Fleet",
+    "subtitle": "Choose from our curated collection of premium vehicles, from quiet electric flagships to roaring performance icons.",
+    "showing": "Showing {{count}} luxury cars",
+    "sortBy": "Sort by:",
+    "sortOptions": ["Recommended", "Price: Low to High", "Price: High to Low", "Newest First"]
+  },
+  "aboutPage": {
+    "title": "Our Journey",
+    "visionTitle": "A Vision of Perfection",
+    "premiumCars": "Premium Cars",
+    "happyClients": "Happy Clients"
+  },
+  "contactPage": {
+    "title": "Let's Connect",
+    "subtitle": "Have questions about our fleet or special requests? Our concierge team is here to assist you 24/7.",
+    "cards": {
+      "emailTitle": "Email Us",
+      "emailAction": "Send Email",
+      "callTitle": "Call Us",
+      "callAction": "Call Now",
+      "visitTitle": "Visit Us",
+      "visitAction": "Get Directions"
+    },
+    "form": {
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "John Doe",
+      "email": "Email Address",
+      "emailPlaceholder": "john@example.com",
+      "subject": "Subject",
+      "subjectOptions": ["Booking Inquiry", "Corporate Rentals", "Technical Support", "Other"],
+      "message": "Message",
+      "messagePlaceholder": "How can we help you?",
+      "sendMessage": "Send Message"
+    }
+  },
+  "bookingPage": {
+    "title": "Complete Your Booking",
+    "subtitle": "You are just one step away from driving your dream car. Please fill in the details below to finalize your rental request."
+  },
+  "confirmationPage": {
+    "title": "Booking request submitted successfully.",
+    "subtitle": "Thank you for choosing NAK KAP. Our concierge team is reviewing your request and will contact you shortly to confirm availability and final details.",
+    "bookingDetails": "Booking Details",
+    "orderId": "Order ID",
+    "status": "Status",
+    "pendingApproval": "Pending Approval",
+    "estimatedTotal": "Estimated Total",
+    "backToCars": "Back to Cars",
+    "returnHome": "Return Home"
+  },
+  "carDetailPage": {
+    "viewAllPhotos": "View All 12 Photos",
+    "premiumFeatures": "Premium Features",
+    "mileage": "Mileage"
+  },
+  "footer": {
+    "description": "Experience the ultimate in luxury car rentals. NAK KAP offers a curated fleet of premium vehicles for those who demand excellence.",
+    "support": "Support",
+    "helpCenter": "Help Center",
+    "termsOfService": "Terms of Service",
+    "privacyPolicy": "Privacy Policy",
+    "contact": "Contact",
+    "location": "Bangkok, Thailand",
+    "allRightsReserved": "All rights reserved."
   },
   "common": {
     "perDay": "/ day",
