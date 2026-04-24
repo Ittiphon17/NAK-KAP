@@ -49,7 +49,7 @@ export default async function CarDetailPage({ params }: { params: { slug: string
                    <div className="relative rounded-[32px] overflow-hidden shadow-xl group cursor-pointer">
                       <Image src={car.images[0]} alt={car.name} fill className="object-cover" />
                       <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                        <span className="text-white font-bold tracking-widest text-sm">VIEW ALL 12 PHOTOS</span>
+                        <span className="text-white font-bold tracking-widest text-sm">{dict.carDetailPage.viewAllPhotos}</span>
                       </div>
                    </div>
                 </div>
@@ -66,10 +66,10 @@ export default async function CarDetailPage({ params }: { params: { slug: string
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-10 border-y border-gray-100">
                   {[
-                    { label: "Transmission", value: car.transmission },
-                    { label: "Fuel Type", value: car.fuel },
-                    { label: "Seats", value: `${car.seats} Seats` },
-                    { label: "Mileage", value: car.mileage },
+                    { label: dict.common.transmission, value: car.transmission },
+                    { label: dict.common.fuel, value: car.fuel },
+                    { label: dict.common.seats, value: `${car.seats}` },
+                    { label: dict.carDetailPage.mileage, value: car.mileage },
                   ].map((spec, i) => (
                     <div key={i}>
                       <span className="block text-[10px] items-center font-bold text-secondary uppercase tracking-widest mb-2">{spec.label}</span>
@@ -79,7 +79,7 @@ export default async function CarDetailPage({ params }: { params: { slug: string
                 </div>
 
                 <div className="mt-12">
-                  <h3 className="text-2xl font-bold text-primary mb-8">Premium Features</h3>
+                  <h3 className="text-2xl font-bold text-primary mb-8">{dict.carDetailPage.premiumFeatures}</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {car.features.map((feature, i) => (
                       <div key={i} className="flex items-center gap-3 p-4 bg-surface rounded-2xl border border-gray-50">
@@ -100,7 +100,7 @@ export default async function CarDetailPage({ params }: { params: { slug: string
         </div>
       </section>
 
-      <Footer dict={dict} />
+      <Footer dict={dict} locale={locale} />
     </main>
   );
 }

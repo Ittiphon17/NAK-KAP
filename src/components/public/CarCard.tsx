@@ -1,14 +1,16 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Car } from "../../types";
 import { Button } from "../ui/Button";
+import { Locale, withLocale } from "@/src/lib/i18n";
+import { Dictionary } from "@/src/types/i18n";
 
 interface CarCardProps {
   car: Car;
-  dict: any;
+  dict: Dictionary;
+  locale: Locale;
 }
 
-export function CarCard({ car, dict }: CarCardProps) {
+export function CarCard({ car, dict, locale }: CarCardProps) {
   return (
     <div className="luxury-card overflow-hidden group">
       <div className="relative h-64 overflow-hidden">
@@ -51,7 +53,7 @@ export function CarCard({ car, dict }: CarCardProps) {
         </div>
         
         <div className="flex gap-3">
-          <Button variant="outline" size="sm" className="flex-1" href={`/car-detail/${car.slug}`}>
+          <Button variant="outline" size="sm" className="flex-1" href={withLocale(locale, `/car-detail/${car.slug}`)}>
             {dict.common.viewDetails}
           </Button>
           <Button variant="primary" size="sm" className="flex-1">

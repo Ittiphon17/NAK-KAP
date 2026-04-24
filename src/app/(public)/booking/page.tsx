@@ -16,9 +16,9 @@ export default async function BookingPage() {
       
       <section className="pt-40 pb-32 bg-surface">
         <div className="container-custom px-6 text-center">
-          <h1 className="text-5xl font-bold text-primary mb-6">Complete Your Booking</h1>
+          <h1 className="text-5xl font-bold text-primary mb-6">{dict.bookingPage.title}</h1>
           <p className="text-secondary text-lg max-w-2xl mx-auto">
-            You're just one step away from driving your dream car. Please fill in the details below to finalize your rental request.
+            {dict.bookingPage.subtitle}
           </p>
         </div>
       </section>
@@ -31,7 +31,7 @@ export default async function BookingPage() {
         </div>
       </section>
 
-      <Footer dict={dict} />
+      <Footer dict={dict} locale={locale} />
     </main>
   );
 }
